@@ -1,12 +1,21 @@
 <template>
-  <div class="baseBeverage"></div>
+  <div class="baseBeverage" :style="{backgroundColor: base.color}"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { BaseBeverageType } from '../stores/beverage';
+
+type Props = {
+  base: BaseBeverageType
+}
+
+defineProps<Props>()
+</script>
 
 <style scoped>
 .baseBeverage {
   position: relative;
+  background-color: #8B4513;
   width: 100%;
   height: 100%;
   bottom: 0;
